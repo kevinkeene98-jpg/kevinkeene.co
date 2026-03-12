@@ -254,6 +254,41 @@ a {
   color: var(--accent-hover);
 }
 
+.about-block {
+  margin-bottom: 32px;
+}
+
+.about-block:last-child {
+  margin-bottom: 0;
+}
+
+.about-expandable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.about-block.expanded .about-expandable {
+  max-height: 500px;
+}
+
+.about-toggle {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 0;
+  margin-top: 4px;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+
+.about-toggle:hover {
+  color: var(--accent-hover);
+}
+
 /* ── Projects ── */
 .projects {
   padding: 100px 0;

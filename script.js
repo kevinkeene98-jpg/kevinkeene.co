@@ -21,4 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   targets.forEach(el => observer.observe(el));
+
+  // About section read more toggles
+  document.querySelectorAll('.about-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const block = btn.closest('.about-block');
+      const expanded = block.classList.toggle('expanded');
+      btn.textContent = expanded ? 'Read less' : 'Read more';
+    });
+  });
 });
