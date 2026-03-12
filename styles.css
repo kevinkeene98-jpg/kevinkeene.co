@@ -199,9 +199,10 @@ a {
 
 .about-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 24px;
-  margin-bottom: 8px;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .about-headshot {
@@ -215,6 +216,8 @@ a {
 
 .about-content {
   max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .about-content p {
