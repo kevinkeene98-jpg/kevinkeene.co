@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const block = btn.closest('.about-block');
       const expanded = block.classList.toggle('expanded');
-      btn.textContent = expanded ? 'Read less' : 'Read more';
+      btn.textContent = expanded ? 'Read less' : 'Read more'
     });
   });
 });
