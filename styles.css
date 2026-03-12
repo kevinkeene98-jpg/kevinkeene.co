@@ -103,6 +103,18 @@ a {
   transform: translateY(-1px);
 }
 
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
 .btn-outline {
   background: transparent;
   color: var(--text);
@@ -177,6 +189,27 @@ a {
   color: var(--text-muted);
   font-size: 1.05rem;
   margin-bottom: 48px;
+}
+
+/* ── About ── */
+.about {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-content {
+  max-width: 640px;
+}
+
+.about-content p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
 }
 
 /* ── Projects ── */

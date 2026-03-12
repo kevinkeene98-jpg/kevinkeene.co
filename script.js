@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const targets = document.querySelectorAll(
     '.project-card, .timeline-item, .section-title, .section-subtitle, ' +
     '.hero-greeting, .hero-name, .hero-tagline, .hero-description, .hero-cta, ' +
-    '.connect-title, .connect-desc, .connect-links'
+    '.about-content, .connect-title, .connect-desc, .connect-links'
   );
 
   targets.forEach(el => el.classList.add('fade-in'));
