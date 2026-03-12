@@ -231,6 +231,29 @@ a {
   margin-bottom: 0;
 }
 
+.about-topic {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.about-topic:first-child {
+  margin-top: 0;
+}
+
+.about-content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.about-content a:hover {
+  color: var(--accent-hover);
+}
+
 /* ── Projects ── */
 .projects {
   padding: 100px 0;
