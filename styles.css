@@ -197,6 +197,22 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.about-headshot {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  flex-shrink: 0;
+}
+
 .about-content {
   max-width: 640px;
 }
