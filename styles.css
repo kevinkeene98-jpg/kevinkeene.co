@@ -6,14 +6,14 @@
 }
 
 :root {
-  --bg: #0a0a0a;
-  --bg-card: #141414;
-  --bg-card-hover: #1a1a1a;
-  --text: #f5f5f5;
-  --text-muted: #888;
-  --accent: #6366f1;
-  --accent-hover: #818cf8;
-  --border: #222;
+  --bg: #faf9f0;
+  --bg-card: #f3f1e8;
+  --bg-card-hover: #ece9dd;
+  --text: #1a1815;
+  --text-muted: #6b6560;
+  --accent: #c8613a;
+  --accent-hover: #d97757;
+  --border: #e0ddd4;
   --radius: 12px;
 }
 
@@ -51,7 +51,7 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(250, 249, 240, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -95,7 +95,7 @@ a {
 
 .btn-primary {
   background: var(--accent);
-  color: #fff;
+  color: #faf9f0;
 }
 
 .btn-primary:hover {
@@ -200,7 +200,7 @@ a {
 
 .project-card:hover {
   background: var(--bg-card-hover);
-  border-color: #333;
+  border-color: #cbc7bb;
   transform: translateY(-2px);
 }
 
@@ -237,8 +237,8 @@ a {
   font-weight: 500;
   padding: 4px 12px;
   border-radius: 20px;
-  background: rgba(99, 102, 241, 0.12);
-  color: var(--accent-hover);
+  background: rgba(200, 97, 58, 0.1);
+  color: var(--accent);
 }
 
 .project-link {
@@ -302,7 +302,7 @@ a {
 }
 
 .timeline-content:hover {
-  border-color: #333;
+  border-color: #cbc7bb;
 }
 
 .timeline-header {
