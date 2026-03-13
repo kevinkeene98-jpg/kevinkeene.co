@@ -366,6 +366,14 @@ a {
   margin-bottom: 0;
 }
 
+.project-screenshot {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 16px 0;
+}
+
 .project-link-btn {
   display: inline-flex;
   align-items: center;
