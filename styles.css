@@ -502,6 +502,13 @@ a {
   margin-bottom: 16px;
 }
 
+.roles-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
 .timeline-roles {
   display: flex;
   flex-direction: column;
