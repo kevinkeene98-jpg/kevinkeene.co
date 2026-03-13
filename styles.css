@@ -141,6 +141,26 @@ a {
   padding: 120px 0 80px;
 }
 
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-headshot {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border);
+  flex-shrink: 0;
+}
+
 .hero-greeting {
   font-size: 1.1rem;
   color: var(--accent);
@@ -351,15 +371,34 @@ a {
   color: var(--accent);
 }
 
-.project-link {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--accent);
-  transition: color 0.2s;
+.project-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.project-link:hover {
-  color: var(--accent-hover);
+.project-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.project-link-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.project-link-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #faf9f0;
+  transform: scale(1.05);
 }
 
 /* ── Experience ── */
@@ -516,6 +555,17 @@ a {
 
   .hero {
     padding: 100px 0 60px;
+  }
+
+  .hero-layout {
+    flex-direction: column-reverse;
+    text-align: left;
+    gap: 40px;
+  }
+
+  .hero-headshot {
+    width: 180px;
+    height: 180px;
   }
 
   .section-title {
