@@ -217,23 +217,6 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
-.about-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.about-headshot {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--border);
-  flex-shrink: 0;
-}
-
 .about-content {
   max-width: 640px;
   margin: 0 auto;
