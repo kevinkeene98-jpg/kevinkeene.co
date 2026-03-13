@@ -115,15 +115,15 @@ a {
   transform: translateY(-1px);
 }
 
-.btn-outline {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
+.btn-linkedin {
+  background: #0A66C2;
+  color: #fff;
+  border: 1px solid #0A66C2;
 }
 
-.btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+.btn-linkedin:hover {
+  background: #004182;
+  border-color: #004182;
   transform: translateY(-1px);
 }
 
