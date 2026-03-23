@@ -33,11 +33,6 @@
         <p class="hero-description">
           I spent years figuring out how people discover products on the internet — now I build the products they find.
         </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-secondary">Projects</a>
-          <a href="#experience" class="btn btn-secondary">Experience</a>
-          <a href="#connect" class="btn btn-secondary">Connect</a>
-        </div>
       </div>
       <img src="headshot.jpg" alt="Kevin Keene" class="hero-headshot">
     </div>
@@ -268,14 +263,26 @@
           return;
         }
 
+        const assets = data.includes && data.includes.Asset ? data.includes.Asset : [];
+
         grid.innerHTML = data.items.map(entry => {
-          const { eyebrow, title, subtitle } = entry.fields;
+          const { eyebrow, title, subtitle, hero } = entry.fields;
           const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+          let heroUrl = '';
+          if (hero) {
+            const asset = assets.find(a => a.sys.id === hero.sys.id);
+            if (asset) heroUrl = 'https:' + asset.fields.file.url;
+          }
+
           return `
             <a href="/article/${slug}" class="writing-card">
-              ${eyebrow ? `<p class="writing-card-eyebrow">${eyebrow}</p>` : ''}
-              <h3 class="writing-card-title">${title}</h3>
-              ${subtitle ? `<p class="writing-card-subtitle">${subtitle}</p>` : ''}
+              <div class="writing-card-content">
+                ${eyebrow ? `<p class="writing-card-eyebrow">${eyebrow}</p>` : ''}
+                <h3 class="writing-card-title">${title}</h3>
+                ${subtitle ? `<p class="writing-card-subtitle">${subtitle}</p>` : ''}
+              </div>
+              ${heroUrl ? `<div class="writing-card-image"><img src="${heroUrl}" alt="${title}" class="writing-card-hero"></div>` : ''}
             </a>
           `;
         }).join('');
