@@ -197,6 +197,30 @@ a {
   flex-wrap: wrap;
 }
 
+/* ── Scroll Arrow ── */
+.scroll-arrow {
+  display: block;
+  text-align: center;
+  padding-bottom: 24px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  animation: bounce 2s infinite;
+}
+
+.scroll-arrow:hover {
+  color: var(--accent);
+}
+
+.scroll-arrow svg {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
 /* ── Writing ── */
 .writing {
   padding: 100px 0;
