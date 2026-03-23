@@ -50,6 +50,12 @@
       margin-bottom: 48px;
     }
 
+    .article-inline-image {
+      width: 100%;
+      border-radius: var(--radius);
+      margin: 32px 0;
+    }
+
     .article-body h2 {
       font-size: 1.5rem;
       font-weight: 700;
@@ -214,6 +220,8 @@
     const SPACE_ID = 'nbulp81y095d';
     const ACCESS_TOKEN = 'l-C2pvHuVJDaa0gt7WBKYsjcGjlRLTDLvsB2D4P3vaE';
 
+    let assetMap = {};
+
     function renderRichText(node) {
       if (!node) return '';
 
@@ -228,6 +236,17 @@
           });
         }
         return text;
+      }
+
+      if (node.nodeType === 'embedded-asset-block') {
+        const assetId = node.data && node.data.target && node.data.target.sys.id;
+        const asset = assetMap[assetId];
+        if (asset) {
+          const url = 'https:' + asset.fields.file.url;
+          const alt = asset.fields.title || '';
+          return `<img src="${url}" alt="${alt}" class="article-inline-image">`;
+        }
+        return '';
       }
 
       const children = (node.content || []).map(renderRichText).join('');
@@ -303,6 +322,12 @@
           return;
         }
         const { eyebrow, title, subtitle, body, hero } = entry.fields;
+
+        // Build asset map for embedded images
+        assetMap = {};
+        if (data.includes && data.includes.Asset) {
+          data.includes.Asset.forEach(a => { assetMap[a.sys.id] = a; });
+        }
 
         // Resolve hero image from linked assets
         let heroUrl = '';
