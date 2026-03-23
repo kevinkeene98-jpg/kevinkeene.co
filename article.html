@@ -240,8 +240,8 @@
     }
 
     async function loadArticle() {
-      const params = new URLSearchParams(window.location.search);
-      const slug = params.get('slug');
+      const pathParts = window.location.pathname.replace(/\/$/, '').split('/');
+      const slug = pathParts[pathParts.length - 1];
       const container = document.getElementById('article-content');
 
       if (!slug) {

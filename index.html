@@ -272,7 +272,7 @@
           const { eyebrow, title, subtitle } = entry.fields;
           const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
           return `
-            <a href="article.html?slug=${slug}" class="writing-card">
+            <a href="/article/${slug}" class="writing-card">
               ${eyebrow ? `<p class="writing-card-eyebrow">${eyebrow}</p>` : ''}
               <h3 class="writing-card-title">${title}</h3>
               ${subtitle ? `<p class="writing-card-subtitle">${subtitle}</p>` : ''}
