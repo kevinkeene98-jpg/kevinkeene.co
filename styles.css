@@ -197,23 +197,35 @@ a {
   flex-wrap: wrap;
 }
 
-/* ── Featured Banner ── */
-.featured-banner {
-  background: var(--accent);
+/* ── Writing ── */
+.writing {
+  padding: 100px 0;
 }
 
-.featured-banner-link {
+.writing .container {
+  max-width: 1100px;
+}
+
+.writing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.writing-card {
   display: block;
-  padding: 48px 0;
-  text-align: center;
-  transition: background 0.3s;
+  background: var(--accent);
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  transition: all 0.3s;
 }
 
-.featured-banner-link:hover {
+.writing-card:hover {
   background: var(--accent-hover);
+  transform: translateY(-2px);
 }
 
-.featured-banner-eyebrow {
+.writing-card-eyebrow {
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -222,19 +234,17 @@ a {
   margin-bottom: 8px;
 }
 
-.featured-banner-title {
-  font-size: 1.75rem;
+.writing-card-title {
+  font-size: 1.35rem;
   font-weight: 700;
   color: #faf9f0;
   letter-spacing: -0.02em;
   margin-bottom: 8px;
 }
 
-.featured-banner-subtitle {
-  font-size: 1.05rem;
+.writing-card-subtitle {
+  font-size: 1rem;
   color: rgba(250, 249, 240, 0.85);
-  max-width: 520px;
-  margin: 0 auto;
   line-height: 1.6;
 }
 
