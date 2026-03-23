@@ -48,12 +48,8 @@
   <section id="writing" class="writing">
     <div class="container">
       <h2 class="section-title">My writing</h2>
-      <div class="writing-grid">
-        <a href="product-led-content.html" class="writing-card">
-          <p class="writing-card-eyebrow">AI search &amp; discovery</p>
-          <h3 class="writing-card-title">Product-led content</h3>
-          <p class="writing-card-subtitle">Why content should be treated as product infrastructure in the age of AI</p>
-        </a>
+      <div class="writing-grid" id="writing-grid">
+        <!-- Loaded from Contentful -->
       </div>
     </div>
   </section>
@@ -255,6 +251,39 @@
     </div>
   </footer>
 
+  <script>
+    (async function loadWriting() {
+      const SPACE_ID = 'nbulp81y095d';
+      const ACCESS_TOKEN = 'l-C2pvHuVJDaa0gt7WBKYsjcGjlRLTDLvsB2D4P3vaE';
+      const grid = document.getElementById('writing-grid');
+
+      try {
+        const res = await fetch(
+          `https://cdn.contentful.com/spaces/${SPACE_ID}/entries?content_type=blog&access_token=${ACCESS_TOKEN}`
+        );
+        const data = await res.json();
+
+        if (!data.items || data.items.length === 0) {
+          grid.innerHTML = '<p style="color:var(--text-muted)">Coming soon.</p>';
+          return;
+        }
+
+        grid.innerHTML = data.items.map(entry => {
+          const { eyebrow, title, subtitle } = entry.fields;
+          const id = entry.sys.id;
+          return `
+            <a href="article.html?id=${id}" class="writing-card">
+              ${eyebrow ? `<p class="writing-card-eyebrow">${eyebrow}</p>` : ''}
+              <h3 class="writing-card-title">${title}</h3>
+              ${subtitle ? `<p class="writing-card-subtitle">${subtitle}</p>` : ''}
+            </a>
+          `;
+        }).join('');
+      } catch (err) {
+        grid.innerHTML = '<p style="color:var(--text-muted)">Coming soon.</p>';
+      }
+    })();
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

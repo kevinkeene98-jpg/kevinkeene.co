@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading... — Kevin Keene</title>
+  <meta name="description" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .article {
+      padding: 140px 0 100px;
+    }
+
+    .article .container {
+      max-width: 720px;
+    }
+
+    .article-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .article-title {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .article-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 48px;
+      font-style: italic;
+    }
+
+    .article-body h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+
+    .article-body p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .article-body a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .article-body a:hover {
+      color: var(--accent-hover);
+    }
+
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 0.95rem;
+    }
+
+    .article-body th,
+    .article-body td {
+      padding: 14px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-body th {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--bg-card);
+    }
+
+    .article-body td {
+      color: var(--text-muted);
+    }
+
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 20px;
+      margin: 24px 0;
+    }
+
+    .article-body ul,
+    .article-body ol {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      padding-left: 24px;
+    }
+
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+
+    .article-back:hover {
+      color: var(--accent);
+    }
+
+    .article-loading {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      padding: 80px 0;
+    }
+
+    .article-error {
+      text-align: center;
+      color: var(--accent);
+      font-size: 1.05rem;
+      padding: 80px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">KK</a>
+    <div class="nav-links">
+      <a href="/#projects">Projects</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#connect">Connect</a>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="container">
+      <a href="/" class="article-back">&larr; Back</a>
+      <div id="article-content">
+        <p class="article-loading">Loading...</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Kevin Keene. All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    const SPACE_ID = 'nbulp81y095d';
+    const ACCESS_TOKEN = 'l-C2pvHuVJDaa0gt7WBKYsjcGjlRLTDLvsB2D4P3vaE';
+
+    function renderRichText(node) {
+      if (!node) return '';
+
+      if (node.nodeType === 'text') {
+        let text = node.value;
+        if (node.marks) {
+          node.marks.forEach(mark => {
+            if (mark.type === 'bold') text = `<strong>${text}</strong>`;
+            if (mark.type === 'italic') text = `<em>${text}</em>`;
+            if (mark.type === 'underline') text = `<u>${text}</u>`;
+            if (mark.type === 'code') text = `<code>${text}</code>`;
+          });
+        }
+        return text;
+      }
+
+      const children = (node.content || []).map(renderRichText).join('');
+
+      switch (node.nodeType) {
+        case 'document':
+          return children;
+        case 'paragraph':
+          return `<p>${children}</p>`;
+        case 'heading-1':
+          return `<h1>${children}</h1>`;
+        case 'heading-2':
+          return `<h2>${children}</h2>`;
+        case 'heading-3':
+          return `<h3>${children}</h3>`;
+        case 'heading-4':
+          return `<h4>${children}</h4>`;
+        case 'unordered-list':
+          return `<ul>${children}</ul>`;
+        case 'ordered-list':
+          return `<ol>${children}</ol>`;
+        case 'list-item':
+          return `<li>${children}</li>`;
+        case 'blockquote':
+          return `<blockquote>${children}</blockquote>`;
+        case 'hr':
+          return '<hr>';
+        case 'table':
+          return `<table>${children}</table>`;
+        case 'table-row':
+          return `<tr>${children}</tr>`;
+        case 'table-header-cell':
+          return `<th>${children}</th>`;
+        case 'table-cell':
+          return `<td>${children}</td>`;
+        case 'hyperlink':
+          const uri = node.data.uri;
+          return `<a href="${uri}" target="_blank" rel="noopener">${children}</a>`;
+        default:
+          return children;
+      }
+    }
+
+    async function loadArticle() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      const container = document.getElementById('article-content');
+
+      if (!id) {
+        container.innerHTML = '<p class="article-error">Article not found.</p>';
+        return;
+      }
+
+      try {
+        const res = await fetch(
+          `https://cdn.contentful.com/spaces/${SPACE_ID}/entries/${id}?access_token=${ACCESS_TOKEN}`
+        );
+
+        if (!res.ok) {
+          container.innerHTML = '<p class="article-error">Article not found.</p>';
+          return;
+        }
+
+        const entry = await res.json();
+        const { eyebrow, title, subtitle, body } = entry.fields;
+
+        document.title = `${title} — Kevin Keene`;
+        document.querySelector('meta[name="description"]').content = subtitle || '';
+
+        let html = '';
+        if (eyebrow) html += `<p class="article-eyebrow">${eyebrow}</p>`;
+        html += `<h1 class="article-title">${title}</h1>`;
+        if (subtitle) html += `<p class="article-subtitle">${subtitle}</p>`;
+        if (body) html += `<div class="article-body">${renderRichText(body)}</div>`;
+
+        container.innerHTML = html;
+      } catch (err) {
+        container.innerHTML = '<p class="article-error">Something went wrong loading this article.</p>';
+      }
+    }
+
+    loadArticle();
+  </script>
+
+</body>
+</html>
