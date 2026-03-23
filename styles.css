@@ -213,6 +213,15 @@ a {
   background: var(--accent-hover);
 }
 
+.featured-banner-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(250, 249, 240, 0.65);
+  margin-bottom: 8px;
+}
+
 .featured-banner-title {
   font-size: 1.75rem;
   font-weight: 700;
