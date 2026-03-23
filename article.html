@@ -44,6 +44,12 @@
       font-style: italic;
     }
 
+    .article-hero {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-bottom: 48px;
+    }
+
     .article-body h2 {
       font-size: 1.5rem;
       font-weight: 700;
@@ -296,7 +302,14 @@
           container.innerHTML = '<p class="article-error">Article not found.</p>';
           return;
         }
-        const { eyebrow, title, subtitle, body } = entry.fields;
+        const { eyebrow, title, subtitle, body, hero } = entry.fields;
+
+        // Resolve hero image from linked assets
+        let heroUrl = '';
+        if (hero && data.includes && data.includes.Asset) {
+          const asset = data.includes.Asset.find(a => a.sys.id === hero.sys.id);
+          if (asset) heroUrl = 'https:' + asset.fields.file.url;
+        }
 
         document.title = `${title} — Kevin Keene`;
         document.querySelector('meta[name="description"]').content = subtitle || '';
@@ -305,6 +318,7 @@
         if (eyebrow) html += `<p class="article-eyebrow">${eyebrow}</p>`;
         html += `<h1 class="article-title">${title}</h1>`;
         if (subtitle) html += `<p class="article-subtitle">${subtitle}</p>`;
+        if (heroUrl) html += `<img src="${heroUrl}" alt="${title}" class="article-hero">`;
         if (body) html += `<div class="article-body">${renderRichText(body)}</div>`;
 
         container.innerHTML = html;
