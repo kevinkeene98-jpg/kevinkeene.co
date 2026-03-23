@@ -135,6 +135,7 @@ a {
 
 /* ── Hero ── */
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -199,9 +200,10 @@ a {
 
 /* ── Scroll Arrow ── */
 .scroll-arrow {
-  display: block;
-  text-align: center;
-  padding-bottom: 24px;
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
   color: var(--text-muted);
   transition: color 0.2s;
   animation: bounce 2s infinite;
