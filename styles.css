@@ -197,6 +197,38 @@ a {
   flex-wrap: wrap;
 }
 
+/* ── Featured Banner ── */
+.featured-banner {
+  background: var(--accent);
+}
+
+.featured-banner-link {
+  display: block;
+  padding: 48px 0;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.featured-banner-link:hover {
+  background: var(--accent-hover);
+}
+
+.featured-banner-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #faf9f0;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.featured-banner-subtitle {
+  font-size: 1.05rem;
+  color: rgba(250, 249, 240, 0.85);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
 /* ── Section shared ── */
 .section-title {
   font-size: 2rem;
