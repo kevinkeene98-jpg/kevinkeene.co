@@ -1,4 +1,10 @@
 {
+  "redirects": [
+    { "source": "/product-led-content.html", "destination": "/article/product-led-content", "permanent": true },
+    { "source": "/product-led-content", "destination": "/article/product-led-content", "permanent": true },
+    { "source": "/article.html", "destination": "/article/product-led-content", "permanent": false, "has": [{ "type": "query", "key": "slug", "value": "product-led-content" }] },
+    { "source": "/article.html", "destination": "/article/product-led-content", "permanent": false, "has": [{ "type": "query", "key": "id", "value": "(?<id>.*)" }] }
+  ],
   "rewrites": [
     { "source": "/article/:slug", "destination": "/article.html" }
   ]
