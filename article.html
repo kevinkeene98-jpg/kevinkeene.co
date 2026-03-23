@@ -72,26 +72,56 @@
 
     .article-body table {
       width: 100%;
-      border-collapse: collapse;
-      margin: 32px 0;
-      font-size: 0.95rem;
+      border-collapse: separate;
+      border-spacing: 16px 0;
+      margin: 32px -16px;
+      table-layout: fixed;
     }
 
-    .article-body th,
+    .article-body thead th {
+      padding: 20px 24px 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+
+    .article-body th:first-child {
+      background: var(--bg-card);
+      color: var(--text-muted);
+    }
+
+    .article-body th:last-child {
+      background: var(--accent);
+      color: #faf9f0;
+    }
+
     .article-body td {
-      padding: 14px 20px;
-      text-align: left;
+      padding: 14px 24px;
+      font-size: 0.95rem;
+      line-height: 1.6;
       border-bottom: 1px solid var(--border);
     }
 
-    .article-body th {
-      font-weight: 600;
-      color: var(--text);
+    .article-body td:first-child {
       background: var(--bg-card);
+      color: var(--text-muted);
     }
 
-    .article-body td {
-      color: var(--text-muted);
+    .article-body td:last-child {
+      background: rgba(200, 97, 58, 0.08);
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .article-body tr:last-child td:first-child {
+      border-radius: 0 0 var(--radius) var(--radius);
+      border-bottom: none;
+    }
+
+    .article-body tr:last-child td:last-child {
+      border-radius: 0 0 var(--radius) var(--radius);
+      border-bottom: none;
     }
 
     .article-body hr {
