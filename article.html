@@ -235,19 +235,23 @@
       }
     }
 
+    function toSlug(str) {
+      return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+
     async function loadArticle() {
       const params = new URLSearchParams(window.location.search);
-      const id = params.get('id');
+      const slug = params.get('slug');
       const container = document.getElementById('article-content');
 
-      if (!id) {
+      if (!slug) {
         container.innerHTML = '<p class="article-error">Article not found.</p>';
         return;
       }
 
       try {
         const res = await fetch(
-          `https://cdn.contentful.com/spaces/${SPACE_ID}/entries/${id}?access_token=${ACCESS_TOKEN}`
+          `https://cdn.contentful.com/spaces/${SPACE_ID}/entries?content_type=blog&access_token=${ACCESS_TOKEN}`
         );
 
         if (!res.ok) {
@@ -255,7 +259,13 @@
           return;
         }
 
-        const entry = await res.json();
+        const data = await res.json();
+        const entry = data.items.find(item => toSlug(item.fields.title) === slug);
+
+        if (!entry) {
+          container.innerHTML = '<p class="article-error">Article not found.</p>';
+          return;
+        }
         const { eyebrow, title, subtitle, body } = entry.fields;
 
         document.title = `${title} — Kevin Keene`;
