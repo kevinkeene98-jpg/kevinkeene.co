@@ -101,11 +101,10 @@
       <!-- Block 2: Postman + AI -->
       <div class="about-layout about-layout-reverse">
         <div class="about-illustration" id="about-illustration-2">
-          <svg width="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <svg width="100%" viewBox="0 0 300 310" xmlns="http://www.w3.org/2000/svg">
             <!-- AI Conversational interface -->
             <g id="svg-ai-chat" class="svg-layer" style="opacity:0">
               <rect x="65" y="20" width="170" height="130" rx="14" fill="#f3f1e8" stroke="#e0ddd4" stroke-width="1.2"/>
-              <circle cx="84" cy="40" r="5" fill="#c8613a"/>
               <rect x="135" y="32" width="82" height="18" rx="8" fill="#ece9dd"/>
               <rect x="145" y="38" width="50" height="4" rx="2" fill="#6b6560" opacity="0.4"/>
               <rect x="80" y="60" width="136" height="76" rx="10" fill="#faf9f0" stroke="#e0ddd4" stroke-width="0.5"/>
@@ -118,38 +117,21 @@
               <rect x="92" y="120" width="52" height="3.5" rx="1.5" fill="#c8613a" opacity="0.6"/>
               <line x1="92" y1="125" x2="144" y2="125" stroke="#c8613a" stroke-width="0.4" opacity="0.4"/>
             </g>
-            <!-- Converging lines -->
-            <g id="svg-lines" class="svg-layer" style="opacity:0">
-              <line x1="110" y1="158" x2="74" y2="196" stroke="#e0ddd4" stroke-width="1"/>
-              <line x1="150" y1="158" x2="150" y2="196" stroke="#e0ddd4" stroke-width="1"/>
-              <line x1="190" y1="158" x2="226" y2="196" stroke="#e0ddd4" stroke-width="1"/>
-            </g>
-            <!-- Content node (left) -->
-            <g id="svg-content-node" class="svg-layer" style="opacity:0">
-              <rect x="40" y="196" width="68" height="52" rx="10" fill="#f3f1e8" stroke="#e0ddd4" stroke-width="1"/>
-              <rect x="58" y="206" width="30" height="34" rx="3" fill="#faf9f0" stroke="#e0ddd4" stroke-width="0.8"/>
-              <path d="M78 206 L88 206 L88 216 Z" fill="#ece9dd" stroke="#e0ddd4" stroke-width="0.5"/>
-              <rect x="62" y="214" width="18" height="2.5" rx="1" fill="#6b6560" opacity="0.3"/>
-              <rect x="62" y="220" width="14" height="2.5" rx="1" fill="#6b6560" opacity="0.22"/>
-              <rect x="62" y="226" width="20" height="2.5" rx="1" fill="#6b6560" opacity="0.18"/>
-              <rect x="62" y="232" width="12" height="2.5" rx="1" fill="#6b6560" opacity="0.14"/>
-            </g>
-            <!-- Code node (center) -->
-            <g id="svg-code-node" class="svg-layer" style="opacity:0">
-              <rect x="116" y="196" width="68" height="52" rx="10" fill="#f3f1e8" stroke="#e0ddd4" stroke-width="1"/>
-              <text x="150" y="228" font-family="'SF Mono', 'Fira Code', monospace" font-size="20" fill="#6b6560" opacity="0.4" text-anchor="middle" font-weight="500">&lt;/&gt;</text>
-            </g>
-            <!-- Community node (right) -->
-            <g id="svg-community-node" class="svg-layer" style="opacity:0">
-              <rect x="192" y="196" width="68" height="52" rx="10" fill="#f3f1e8" stroke="#e0ddd4" stroke-width="1"/>
-              <circle cx="214" cy="224" r="5" fill="none" stroke="#6b6560" stroke-width="1.3" opacity="0.4"/>
-              <path d="M204 240 C204 233 208 230 214 230 C220 230 224 233 224 240" fill="none" stroke="#6b6560" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/>
-              <ellipse cx="218" cy="210" rx="10" ry="6" fill="#ece9dd"/>
-              <polygon points="216,215 214,219 220,215" fill="#ece9dd"/>
-              <circle cx="242" cy="224" r="5" fill="none" stroke="#6b6560" stroke-width="1.3" opacity="0.4"/>
-              <path d="M232 240 C232 233 236 230 242 230 C248 230 252 233 252 240" fill="none" stroke="#6b6560" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/>
-              <ellipse cx="238" cy="210" rx="10" ry="6" fill="#ece9dd"/>
-              <polygon points="240,215 242,219 236,215" fill="#ece9dd"/>
+            <!-- Connection line + ghost funnel + solid funnel + conversion -->
+            <g id="svg-funnel" class="svg-layer" style="opacity:0">
+              <line x1="150" y1="158" x2="150" y2="178" stroke="#e0ddd4" stroke-width="1"/>
+              <!-- Ghost wide funnel top (crossed out) -->
+              <path d="M100 185 L200 185 L180 210 L120 210 Z" fill="#f3f1e8" stroke="#e0ddd4" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="110" y1="188" x2="190" y2="207" stroke="#e0ddd4" stroke-width="1" opacity="0.5"/>
+              <line x1="190" y1="188" x2="110" y2="207" stroke="#e0ddd4" stroke-width="1" opacity="0.5"/>
+              <!-- Solid narrow bottom of funnel -->
+              <path d="M120 214 L180 214 L162 248 L138 248 Z" fill="#c8613a" opacity="0.12" stroke="#c8613a" stroke-width="1" stroke-opacity="0.4"/>
+              <!-- Arrow out the bottom -->
+              <line x1="150" y1="252" x2="150" y2="268" stroke="#c8613a" stroke-width="1.2" opacity="0.5"/>
+              <path d="M145 263 L150 270 L155 263" fill="none" stroke="#c8613a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+              <!-- Conversion dot -->
+              <circle cx="150" cy="290" r="6" fill="#c8613a" opacity="0.15" stroke="#c8613a" stroke-width="1"/>
+              <path d="M146 290 L149 293 L155 287" fill="none" stroke="#c8613a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </g>
           </svg>
         </div>
@@ -331,8 +313,8 @@
         1: [document.getElementById('svg-search-bar')],
         2: [document.getElementById('svg-arrow-1'), document.getElementById('svg-serp')],
         3: [document.getElementById('svg-arrow-2'), document.getElementById('svg-cart')],
-        4: [document.getElementById('svg-ai-chat'), document.getElementById('svg-lines')],
-        5: [document.getElementById('svg-content-node'), document.getElementById('svg-code-node'), document.getElementById('svg-community-node')]
+        4: [document.getElementById('svg-ai-chat')],
+        5: [document.getElementById('svg-funnel')]
       };
       const triggers = document.querySelectorAll('.about-anim-trigger');
 
