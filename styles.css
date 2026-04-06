@@ -314,13 +314,26 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
-.about-content {
-  max-width: 680px;
-  margin: 0 auto;
+.about-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
 }
 
-.about-cta {
-  margin-top: 32px;
+.about-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-illustration {
+  position: sticky;
+  top: 120px;
+  flex-shrink: 0;
+  width: 260px;
+}
+
+.svg-layer {
+  transition: opacity 0.8s ease;
 }
 
 .about-content p {
@@ -756,6 +769,16 @@ a {
 
   .project-card-image {
     width: 100%;
+  }
+
+  .about-layout {
+    flex-direction: column;
+  }
+
+  .about-illustration {
+    position: static;
+    width: 200px;
+    margin: 0 auto;
   }
 
   .writing-card {

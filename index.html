@@ -47,12 +47,56 @@
   <section id="about" class="about">
     <div class="container">
       <h2 class="section-title">About me</h2>
-      <div class="about-content">
-        <p>Over the past 10 years, I've seen SEO evolve from a marketing channel to essential product infrastructure.</p>
-        <p>I started as a consultant during the e-commerce boom of the early-mid 2010's. This was a time when online retailers were rapidly expanding internationally, redesigning for mobile, and replatforming to new technologies. I had the privilege of helping brands like Patagonia, GoPro, and Titleist build durable revenue streams through organic search.</p>
-        <p>Eventually, I joined NP Digital and managed a team of consultants. At NP Digital, I learned the importance of a product-led approach to SEO, as our most successful client engagements had direct partnership with their internal product orgs. By partnering with product managers at brands like Adobe, Party City, and SoFi, we were able to achieve bottom-line results &mdash; not just top-of-funnel traffic.</p>
-        <p>Those learnings took me to Postman, where I developed the company's organic search function into a product-led growth initiative. With Postman, I partnered with and eventually transitioned to the product org to lead a multi-year roadmap focused on growing their online network (the Postman API Network). We developed an organic acquisition engine that gained tens of thousands of new users in under 12 months.</p>
-        <p>With the emergence of AI, I've only found the product-led approach to organic discovery matters now more than ever. People are not visiting websites until they are ready to convert, meaning SEO can no longer be thought of as a top-of-funnel channel. The focus needs to be on the bottom-line.</p>
+      <div class="about-layout">
+        <div class="about-content">
+          <p>Over the past 10 years, I've seen SEO evolve from a marketing channel to essential product infrastructure.</p>
+          <p class="about-anim-trigger" data-reveal="search-bar">I started as a consultant during the e-commerce boom of the early-mid 2010's. This was a time when online retailers were rapidly expanding internationally, redesigning for mobile, and replatforming to new technologies. I had the privilege of helping brands like Patagonia, GoPro, and Titleist build durable revenue streams through organic search.</p>
+          <p class="about-anim-trigger" data-reveal="serp-results">Eventually, I joined NP Digital and managed a team of consultants. At NP Digital, I learned the importance of a product-led approach to SEO, as our most successful client engagements had direct partnership with their internal product orgs. By partnering with product managers at brands like Adobe, Party City, and SoFi, we were able to achieve bottom-line results &mdash; not just top-of-funnel traffic.</p>
+          <p>Those learnings took me to Postman, where I developed the company's organic search function into a product-led growth initiative. With Postman, I partnered with and eventually transitioned to the product org to lead a multi-year roadmap focused on growing their online network (the Postman API Network). We developed an organic acquisition engine that gained tens of thousands of new users in under 12 months.</p>
+          <p>With the emergence of AI, I've only found the product-led approach to organic discovery matters now more than ever. People are not visiting websites until they are ready to convert, meaning SEO can no longer be thought of as a top-of-funnel channel. The focus needs to be on the bottom-line.</p>
+        </div>
+        <div class="about-illustration" id="about-illustration">
+          <svg width="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Search bar -->
+            <g id="svg-search-bar" class="svg-layer" style="opacity:0">
+              <rect x="50" y="40" width="200" height="40" rx="20" fill="#f3f1e8" stroke="#e0ddd4" stroke-width="1.5"/>
+              <circle cx="80" cy="60" r="10" fill="none" stroke="#6b6560" stroke-width="2"/>
+              <line x1="87" y1="67" x2="94" y2="74" stroke="#6b6560" stroke-width="2" stroke-linecap="round"/>
+              <rect x="100" y="54" width="60" height="4" rx="2" fill="#e0ddd4"/>
+              <rect x="100" y="62" width="36" height="4" rx="2" fill="#e0ddd4"/>
+            </g>
+            <!-- Down arrow 1 -->
+            <g id="svg-arrow-1" class="svg-layer" style="opacity:0">
+              <line x1="150" y1="88" x2="150" y2="110" stroke="#e0ddd4" stroke-width="1.5"/>
+              <path d="M144 104 L150 112 L156 104" fill="none" stroke="#e0ddd4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <!-- SERP results -->
+            <g id="svg-serp" class="svg-layer" style="opacity:0">
+              <rect x="60" y="124" width="180" height="60" rx="10" fill="#f3f1e8" stroke="#e0ddd4" stroke-width="1"/>
+              <rect x="76" y="136" width="6" height="12" rx="3" fill="#c8613a"/>
+              <rect x="90" y="136" width="80" height="4" rx="2" fill="#1a1815" opacity="0.3"/>
+              <rect x="90" y="144" width="50" height="3" rx="1.5" fill="#6b6560" opacity="0.3"/>
+              <rect x="76" y="158" width="4" height="12" rx="2" fill="#e0ddd4"/>
+              <rect x="90" y="158" width="70" height="4" rx="2" fill="#1a1815" opacity="0.15"/>
+              <rect x="90" y="166" width="45" height="3" rx="1.5" fill="#6b6560" opacity="0.15"/>
+            </g>
+            <!-- Down arrow 2 -->
+            <g id="svg-arrow-2" class="svg-layer" style="opacity:0">
+              <line x1="150" y1="192" x2="150" y2="214" stroke="#e0ddd4" stroke-width="1.5"/>
+              <path d="M144 208 L150 216 L156 208" fill="none" stroke="#e0ddd4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <!-- Cart button -->
+            <g id="svg-cart" class="svg-layer" style="opacity:0">
+              <rect x="90" y="226" width="120" height="44" rx="10" fill="#c8613a"/>
+              <g transform="translate(150, 248)">
+                <path d="M-16 -8 L-12 -8 L-6 6 L14 6" fill="none" stroke="#faf9f0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M-10 -4 L14 -4 L12 4 L-8 4 Z" fill="none" stroke="#faf9f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="-4" cy="11" r="2.5" fill="#faf9f0"/>
+                <circle cx="10" cy="11" r="2.5" fill="#faf9f0"/>
+              </g>
+            </g>
+          </svg>
+        </div>
       </div>
     </div>
   </section>
@@ -218,6 +262,40 @@
       } catch (err) {
         grid.innerHTML = '<p style="color:var(--text-muted)">Coming soon.</p>';
       }
+    })();
+  </script>
+  <script>
+    // About illustration scroll animation
+    (function() {
+      const layers = [
+        document.getElementById('svg-search-bar'),
+        document.getElementById('svg-arrow-1'),
+        document.getElementById('svg-serp'),
+        document.getElementById('svg-arrow-2'),
+        document.getElementById('svg-cart')
+      ];
+      const triggers = document.querySelectorAll('.about-anim-trigger');
+
+      function revealOnScroll() {
+        // First trigger (e-commerce paragraph) reveals search bar + arrow
+        // Second trigger (NP Digital paragraph) reveals SERP + arrow + cart
+        triggers.forEach((trigger, i) => {
+          const rect = trigger.getBoundingClientRect();
+          const visible = rect.top < window.innerHeight * 0.75;
+          if (i === 0 && visible) {
+            layers[0].style.opacity = '1';
+            layers[1].style.opacity = '1';
+          }
+          if (i === 1 && visible) {
+            layers[2].style.opacity = '1';
+            layers[3].style.opacity = '1';
+            layers[4].style.opacity = '1';
+          }
+        });
+      }
+
+      window.addEventListener('scroll', revealOnScroll, { passive: true });
+      revealOnScroll();
     })();
   </script>
   <script src="script.js"></script>
