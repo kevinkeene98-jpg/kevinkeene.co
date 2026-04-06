@@ -329,7 +329,7 @@ a {
   position: sticky;
   top: 120px;
   flex-shrink: 0;
-  width: 260px;
+  width: 360px;
 }
 
 .svg-layer {
@@ -777,7 +777,7 @@ a {
 
   .about-illustration {
     position: static;
-    width: 200px;
+    width: 260px;
     margin: 0 auto;
   }
 
