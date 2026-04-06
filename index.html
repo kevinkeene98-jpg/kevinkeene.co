@@ -265,7 +265,7 @@
     })();
   </script>
   <script>
-    // About illustration scroll animation
+    // About illustration scroll animation — show/hide based on scroll
     (function() {
       const steps = {
         1: [document.getElementById('svg-search-bar')],
@@ -278,9 +278,9 @@
         triggers.forEach(trigger => {
           const step = trigger.dataset.step;
           const rect = trigger.getBoundingClientRect();
-          const visible = rect.top < window.innerHeight * 0.75;
-          if (visible && steps[step]) {
-            steps[step].forEach(el => { el.style.opacity = '1'; });
+          const inView = rect.top < window.innerHeight * 0.8 && rect.bottom > window.innerHeight * 0.15;
+          if (steps[step]) {
+            steps[step].forEach(el => { el.style.opacity = inView ? '1' : '0'; });
           }
         });
       }
