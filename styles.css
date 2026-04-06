@@ -315,9 +315,12 @@ a {
 }
 
 .about-content {
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
-  text-align: center;
+}
+
+.about-cta {
+  margin-top: 32px;
 }
 
 .about-content p {
