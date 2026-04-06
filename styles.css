@@ -322,6 +322,15 @@ a {
   display: flex;
   align-items: center;
   gap: 80px;
+  margin-bottom: 64px;
+}
+
+.about-layout:last-child {
+  margin-bottom: 0;
+}
+
+.about-layout-reverse {
+  flex-direction: row-reverse;
 }
 
 .about-content {
@@ -773,7 +782,8 @@ a {
     width: 100%;
   }
 
-  .about-layout {
+  .about-layout,
+  .about-layout-reverse {
     flex-direction: column;
   }
 
