@@ -331,7 +331,10 @@ a {
 
 .about-layout-reverse {
   flex-direction: row-reverse;
-  align-items: center;
+}
+
+.about-layout-reverse .about-illustration {
+  align-self: center;
 }
 
 .about-content {
