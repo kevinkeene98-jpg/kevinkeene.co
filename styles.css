@@ -355,7 +355,8 @@ a {
   margin-bottom: 20px;
 }
 
-.about-content p:last-child {
+.about-content p:last-child,
+.about-content p:last-of-type {
   margin-bottom: 0;
 }
 
@@ -418,13 +419,18 @@ a {
 
 .about-cta {
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .about-cta-text {
   color: var(--text-muted);
   font-size: 1.05rem;
   line-height: 1.8;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.about-cta .case-study-link {
+  margin-bottom: 0;
 }
 
 .about-block {
