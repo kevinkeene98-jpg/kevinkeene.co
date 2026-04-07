@@ -414,6 +414,11 @@ a {
   height: 14px;
 }
 
+.about-cta {
+  text-align: center;
+  margin-top: 48px;
+}
+
 .about-block {
   margin-bottom: 32px;
 }
