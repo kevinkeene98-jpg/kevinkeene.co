@@ -381,6 +381,39 @@ a {
   color: var(--accent-hover);
 }
 
+.case-study-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.case-study-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.case-study-link:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+  color: var(--accent-hover);
+}
+
+.case-study-link svg {
+  width: 14px;
+  height: 14px;
+}
+
 .about-block {
   margin-bottom: 32px;
 }
