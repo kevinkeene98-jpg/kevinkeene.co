@@ -320,7 +320,7 @@ a {
 
 .about-layout {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 80px;
   margin-bottom: 32px;
 }
@@ -331,6 +331,7 @@ a {
 
 .about-layout-reverse {
   flex-direction: row-reverse;
+  align-items: center;
 }
 
 .about-content {
