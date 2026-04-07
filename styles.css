@@ -416,13 +416,13 @@ a {
 }
 
 .about-cta {
-  text-align: center;
-  margin-top: 48px;
+  margin-top: 0;
 }
 
 .about-cta-text {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
   margin-bottom: 12px;
 }
 
